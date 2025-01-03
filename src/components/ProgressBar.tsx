@@ -8,13 +8,13 @@ export default function ProgressBar({ current, total }: ProgressBarProps) {
 
   return (
     <div className="space-y-2">
-      <div className="flex justify-between text-sm text-gray-600">
-        <span>Question {current} of {total}</span>
-        <span>{Math.round(progress)}%</span>
+      <div className="flex justify-between text-sm text-gray-600 mb-2">
+        <span className="font-medium">Question {current} of {total}</span>
+        <span className="font-medium">{Math.round(progress)}%</span>
       </div>
-      <div className="h-2 bg-gray-200 rounded-full">
+      <div className="progress-bar">
         <div
-          className="h-full bg-blue-500 rounded-full transition-all duration-300"
+          className="progress-bar-fill"
           style={{ width: `${progress}%` }}
         />
       </div>

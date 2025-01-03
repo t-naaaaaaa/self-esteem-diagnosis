@@ -3,11 +3,144 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 243, 244, 246;
+  /* Primary Colors */
+  --primary-DEFAULT: #1E40AF;    /* 深い青 - メインカラー */
+  --primary-light: #60A5FA;      /* 明るい青 - アクセント */
+  --primary-dark: #1E3A8A;       /* 濃い青 - 重要部分 */
+  
+  /* Secondary Colors */
+  --secondary-DEFAULT: #0EA5E9;  /* 爽やかな青 - サブカラー */
+  --secondary-light: #7DD3FC;    /* 淡い青 - 軽いアクセント */
+  --secondary-dark: #0369A1;     /* 深いシアン - 重要サブ要素 */
+  
+  /* Accent Colors */
+  --accent-100: #F0F9FF;        /* 最も淡い青 - 背景用 */
+  --accent-200: #BAE6FD;        /* 淡い青 - ホバー用 */
+  --accent-300: #38BDF8;        /* 明るい青 - アクセント用 */
+  
+  /* Animation Timing */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* === Global Styles === */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  background: var(--accent-100);
+  font-feature-settings: "palt";
+  min-height: 100vh;
+}
+
+/* === Card Styles === */
+.question-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  transition: all var(--transition-base);
+}
+
+.question-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+/* === Button Styles === */
+.btn-primary {
+  background-color: var(--primary-DEFAULT);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all var(--transition-base);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-DEFAULT);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all var(--transition-base);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-dark);
+  transform: translateY(-1px);
+}
+
+/* === Progress Bar === */
+.progress-bar {
+  background: var(--accent-200);
+  border-radius: 9999px;
+  overflow: hidden;
+  height: 0.5rem;
+}
+
+.progress-bar-fill {
+  background: linear-gradient(90deg, var(--primary-light), var(--primary-DEFAULT));
+  height: 100%;
+  transition: width var(--transition-base);
+}
+
+/* === Typography === */
+.heading-primary {
+  background: linear-gradient(135deg, var(--primary-DEFAULT), var(--secondary-DEFAULT));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-bottom: 2rem;
+}
+
+/* === Result Card === */
+.result-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.recommendation-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recommendation-list li {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  background: var(--accent-100);
+  border-radius: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.recommendation-list li:hover {
+  background: var(--accent-200);
+  transform: translateX(4px);
+}
+
+/* === Share Button === */
+.share-button {
+  background: #1DA1F2;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.share-button:hover {
+  background: #1a8cd8;
+  transform: translateY(-1px);
 }
