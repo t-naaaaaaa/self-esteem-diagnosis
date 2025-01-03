@@ -174,28 +174,47 @@ export default function ResultCard({ results, onRetry }: ResultCardProps) {
           </>
         )}
 
-        <div className="flex flex-col gap-3 mt-6">
-          <button
-            onClick={handleShare}
-            className="share-button"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            Xでシェアする
-          </button>
+        <div className="space-y-6">
+          <div className="bg-gray-50 p-4 rounded-lg text-sm">
+            <p className="text-gray-700 mb-2">
+              参考図書：『書くだけで人生が変わる自己肯定感ノート』中島輝 著
+            </p>
+            <p className="text-gray-600 text-xs">
+              <a 
+                href="https://www.amazon.co.jp/%E6%9B%B8%E3%81%8F%E3%81%A0%E3%81%91%E3%81%A7%E4%BA%BA%E7%94%9F%E3%81%8C%E5%A4%89%E3%82%8F%E3%82%8B%E8%87%AA%E5%B7%B1%E8%82%AF%E5%AE%9A%E6%84%9F%E3%83%8E%E3%83%BC%E3%83%88-%E4%B8%AD%E5%B3%B6%E8%BC%9D/dp/4815604037"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Amazon商品ページ
+              </a>
+              （アフィリエイトリンクは使用していません）
+            </p>
+          </div>
 
-          <button
-            onClick={onRetry}
-            className="btn-secondary"
-          >
-            もう一度診断する
-          </button>
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={handleShare}
+              className="share-button"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              Xでシェアする
+            </button>
+
+            <button
+              onClick={onRetry}
+              className="btn-secondary"
+            >
+              もう一度診断する
+            </button>
+          </div>
         </div>
       </div>
     </motion.div>
