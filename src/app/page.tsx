@@ -6,7 +6,6 @@ import type { QuestionType } from '@/types';
 import QuestionCard from '@/components/QuestionCard';
 import ProgressBar from '@/components/ProgressBar';
 import ResultCard from '@/components/ResultCard';
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Home() {
   const [currentQuestions, setCurrentQuestions] = useState<QuestionType[]>([]);
@@ -58,7 +57,6 @@ export default function Home() {
         <h1 className="text-2xl font-bold text-center text-gray-800">
           自己肯定感診断テスト (全12問)
         </h1>
-        <SpeedInsights/>
         {!showResult ? (
           <>
             <ProgressBar current={currentIndex + 1} total={currentQuestions.length} />
